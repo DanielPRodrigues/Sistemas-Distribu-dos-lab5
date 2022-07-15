@@ -31,8 +31,7 @@ def interface():
         if f == 2:
             print("Historico de atualizacoes:{}\n".format(h))
         if f == 3:
-            #Checando se o processo ja possui o chapeu
-            #se não possuir, ele entrará em uma fila e quando tiver a certeza de o processo com o chapeu nao esta escrevendo no momento, ele tentará escrever
+            #verificação
             if not p:
                 #tomando as possiveis listas de outros processos que ja entraram antes dele na fila
                 for i in range(4):
@@ -75,10 +74,8 @@ def interface():
             c = input("Digite o novo valor que deseja para a variavel x\n")
             c = int(c)
             copia_primaria.exposed_modificar_variavel_local(copia_primaria,c)
-            #Finalmente, realizando o processo de escrita, até que o usuario digite 'n', indicando que nao deseja mais escrever
             while True:
                 c = input("Digite o novo valor que deseja para variavel local, caso nao queira digite a letra n\n")
-                #Uma vez que o usuario digitar 'n', atualizamos todos os outros processos com o novo valor de x e indicamos que este processo nao esta mais escrevendo 
                 if c == 'n':
                     print("Finalizando as alteracoes, enviando o valor final para os outros processos\n")
                     for k in range (4):
